@@ -169,6 +169,16 @@ The intelligent description generator recognizes:
 - Python 3.6+
 - No external dependencies
 
+## 📋 Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a complete list of changes and release notes for each version.
+
+**Latest Release (v1.1.0):**
+- Added proper `--help` and `--version` command-line arguments
+- Enhanced CLI with `argparse` for better user experience
+- Added `--verbose` flag for detailed output
+- Improved error messages and documentation
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
