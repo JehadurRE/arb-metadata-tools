@@ -13,7 +13,7 @@ setup(
     version="1.0.0",
     author="Md. Jehadur Rahman Emran",
     author_email="emran.jehadur@gmail.com",
-    description="Automatically manage metadata in Flutter ARB localization files",
+    description="Automatically manage metadata in ARB (Application Resource Bundle) localization files for Flutter, Angular, Chrome extensions, and more",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/JehadurRE/arb-metadata-tools",
@@ -42,7 +42,7 @@ setup(
         "Operating System :: OS Independent",
         "Environment :: Console",
     ],
-    keywords="flutter arb localization i18n l10n internationalization metadata automation",
+    keywords="arb localization i18n l10n internationalization metadata automation flutter angular chrome-extension",
     python_requires=">=3.6",
     entry_points={
         "console_scripts": [

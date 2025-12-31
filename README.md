@@ -1,4 +1,4 @@
-# ARB Metadata Tools for Flutter
+# ARB Metadata Tools
 
 <div align="center">
 
@@ -10,11 +10,19 @@
 
 </div>
 
-A collection of Python scripts to automatically manage metadata in Flutter ARB (Application Resource Bundle) localization files.
+A collection of Python scripts to automatically manage metadata in ARB (Application Resource Bundle) localization files.
+
+**Works with:** Flutter, Angular, Chrome Extensions, and any application using ARB format for internationalization (i18n/l10n).
 
 ## Problem
 
-When using Flutter's localization with ARB files, the Google ARB VS Code extension shows warnings for keys without metadata. Manually adding metadata to hundreds of keys is tedious and time-consuming.
+When using ARB files for localization, the Google ARB VS Code extension shows warnings for keys without metadata. Manually adding metadata to hundreds of keys is tedious and time-consuming.
+
+**This affects developers using:**
+- Flutter apps
+- Angular applications  
+- Chrome extensions
+- Any project using ARB format for i18n/l10n
 
 ## Solution
 
