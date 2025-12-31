@@ -13,10 +13,11 @@ License: MIT
 Repository: https://github.com/JehadurRE/arb-metadata-tools
 """
 
+import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 
 def add_metadata_to_arb(file_path: str) -> int:
@@ -69,11 +70,48 @@ def add_metadata_to_arb(file_path: str) -> int:
 
 def main():
     """Main entry point for the script."""
-    # Configure these paths for your project
-    arb_files = [
-        'lib/l10n/app_en.arb',
-        'lib/l10n/app_bn.arb'
-    ]
+    parser = argparse.ArgumentParser(
+        description='Add empty metadata blocks to ARB localization files',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='''
+Examples:
+  arb-metadata                              # Process default files (lib/l10n/*.arb)
+  arb-metadata file1.arb file2.arb          # Process specific files
+  arb-metadata --files lib/l10n/*.arb       # Process files matching pattern
+
+Default behavior:
+  If no files are specified, processes:
+    - lib/l10n/app_en.arb
+    - lib/l10n/app_bn.arb
+
+Author: Md. Jehadur Rahman Emran
+Repository: https://github.com/JehadurRE/arb-metadata-tools
+        '''
+    )
+    
+    parser.add_argument(
+        'files',
+        nargs='*',
+        help='ARB files to process (default: lib/l10n/app_en.arb lib/l10n/app_bn.arb)'
+    )
+    
+    parser.add_argument(
+        '--version',
+        action='version',
+        version='arb-metadata-tools 1.1.0'
+    )
+    
+    args = parser.parse_args()
+    
+    # Determine which files to process
+    if args.files:
+        arb_files = args.files
+    else:
+        # Default files
+        arb_files = [
+            'lib/l10n/app_en.arb',
+            'lib/l10n/app_bn.arb'
+        ]
     
     print("ARB Metadata Generator")
     print("=" * 50)

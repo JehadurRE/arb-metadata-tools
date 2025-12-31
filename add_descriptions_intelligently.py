@@ -15,11 +15,12 @@ License: MIT
 Repository: https://github.com/JehadurRE/arb-metadata-tools
 """
 
+import argparse
 import json
 import re
 import sys
 from pathlib import Path
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, Tuple, List
 
 
 # Mapping of key patterns to description templates
@@ -180,11 +181,62 @@ def add_descriptions(file_path: str, verbose: bool = True) -> int:
 
 def main():
     """Main entry point for the script."""
-    # Configure these paths for your project
-    arb_files = [
-        'lib/l10n/app_en.arb',
-        'lib/l10n/app_bn.arb'
-    ]
+    parser = argparse.ArgumentParser(
+        description='Generate intelligent descriptions for ARB localization file metadata',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='''
+Examples:
+  arb-descriptions                          # Process default files (lib/l10n/*.arb)
+  arb-descriptions file1.arb file2.arb      # Process specific files
+  arb-descriptions --verbose file.arb       # Show each description being added
+
+Default behavior:
+  If no files are specified, processes:
+    - lib/l10n/app_en.arb
+    - lib/l10n/app_bn.arb
+
+Description Generation:
+  The tool uses pattern recognition to generate contextual descriptions:
+  - Labels: "Label for {field} input field"
+  - Hints: "Placeholder or hint text for {field}"
+  - Actions: "Button text to {action}"
+  - Status: "Success/Error message when {action}"
+  - And many more intelligent patterns...
+
+Author: Md. Jehadur Rahman Emran
+Repository: https://github.com/JehadurRE/arb-metadata-tools
+        '''
+    )
+    
+    parser.add_argument(
+        'files',
+        nargs='*',
+        help='ARB files to process (default: lib/l10n/app_en.arb lib/l10n/app_bn.arb)'
+    )
+    
+    parser.add_argument(
+        '-v', '--verbose',
+        action='store_true',
+        help='Show each description being added'
+    )
+    
+    parser.add_argument(
+        '--version',
+        action='version',
+        version='arb-metadata-tools 1.1.0'
+    )
+    
+    args = parser.parse_args()
+    
+    # Determine which files to process
+    if args.files:
+        arb_files = args.files
+    else:
+        # Default files
+        arb_files = [
+            'lib/l10n/app_en.arb',
+            'lib/l10n/app_bn.arb'
+        ]
     
     print("Intelligent ARB Description Generator")
     print("=" * 50)
@@ -195,7 +247,7 @@ def main():
     for arb_file in arb_files:
         try:
             print(f"Processing: {arb_file}")
-            count = add_descriptions(arb_file, verbose=False)
+            count = add_descriptions(arb_file, verbose=args.verbose)
             total_updated += count
             print(f"✓ Updated {count} descriptions")
             print()

@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [1.1.0] - 2025-01-01
+
+### Added
+- Proper `--help` command-line argument support
+- `--version` flag to display version information
+- Command-line argument parsing with `argparse`
+- Ability to specify custom ARB files as arguments
+- `--verbose` flag for `arb-descriptions` to show each description being added
+- Comprehensive help text with usage examples
+- Better error messages and user guidance
+
+### Changed
+- Improved command-line interface with proper argument handling
+- Enhanced documentation in help text
+- Better user experience with informative help messages
+
 ## [1.0.0] - 2025-01-01
 
 ### Added
@@ -36,19 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Publishing guide for open-source distribution
 - MIT License for free use and modification
 
-## [Unreleased]
-
-### Planned
-- Command-line arguments for custom file paths
-- Configuration file support (`.arbrc`)
-- Batch processing for large projects
-- Custom pattern definitions
-- Integration with CI/CD pipelines
-- VS Code extension
-- Support for other localization formats (JSON, XML)
-- Unit tests
-- GitHub Actions workflow
-
 ---
 
+[1.1.0]: https://github.com/JehadurRE/arb-metadata-tools/releases/tag/v1.1.0
 [1.0.0]: https://github.com/JehadurRE/arb-metadata-tools/releases/tag/v1.0.0

@@ -10,7 +10,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="arb-metadata-tools",
-    version="1.0.0",
+    version="1.1.0",
     author="Md. Jehadur Rahman Emran",
     author_email="emran.jehadur@gmail.com",
     description="Automatically manage metadata in ARB (Application Resource Bundle) localization files for Flutter, Angular, Chrome extensions, and more",

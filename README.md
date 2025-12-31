@@ -71,11 +71,17 @@ After installation, you can use the command-line tools:
 ### Basic Metadata Addition
 
 ```bash
-# If installed from PyPI
+# Process default files (lib/l10n/app_en.arb, lib/l10n/app_bn.arb)
 arb-metadata
 
-# Or if running from source
-python add_arb_metadata.py
+# Process specific files
+arb-metadata path/to/file1.arb path/to/file2.arb
+
+# Show help
+arb-metadata --help
+
+# Show version
+arb-metadata --version
 ```
 
 This adds empty metadata blocks to all keys without metadata.
@@ -83,11 +89,20 @@ This adds empty metadata blocks to all keys without metadata.
 ### Intelligent Description Generation
 
 ```bash
-# If installed from PyPI
+# Process default files
 arb-descriptions
 
-# Or if running from source
-python add_descriptions_intelligently.py
+# Process specific files
+arb-descriptions path/to/file1.arb path/to/file2.arb
+
+# Show each description being added (verbose mode)
+arb-descriptions --verbose path/to/file.arb
+
+# Show help
+arb-descriptions --help
+
+# Show version
+arb-descriptions --version
 ```
 
 This generates contextual descriptions based on:
