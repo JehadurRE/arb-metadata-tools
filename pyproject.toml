@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arb-metadata-tools"
+version = "1.0.0"
+description = "Automatically manage metadata in Flutter ARB localization files"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "MIT"}
+authors = [
+    {name = "Md. Jehadur Rahman Emran", email = "emran.jehadur@gmail.com"}
+]
+maintainers = [
+    {name = "Md. Jehadur Rahman Emran", email = "emran.jehadur@gmail.com"}
+]
+keywords = ["flutter", "arb", "localization", "i18n", "l10n", "internationalization", "metadata", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Localization",
+    "Topic :: Software Development :: Internationalization",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+]
+
+[project.urls]
+Homepage = "https://github.com/JehadurRE/arb-metadata-tools"
+Documentation = "https://github.com/JehadurRE/arb-metadata-tools#readme"
+Repository = "https://github.com/JehadurRE/arb-metadata-tools"
+"Bug Tracker" = "https://github.com/JehadurRE/arb-metadata-tools/issues"
+Portfolio = "https://portfolio.jehadurre.icu"
+
+[project.scripts]
+arb-metadata = "add_arb_metadata:main"
+arb-descriptions = "add_descriptions_intelligently:main"
+
+[tool.setuptools]
+py-modules = ["add_arb_metadata", "add_descriptions_intelligently"]
